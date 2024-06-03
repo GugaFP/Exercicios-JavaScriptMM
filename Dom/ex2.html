@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+
+<body>
+    <ul id="minhalista">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <button onclick="adicionaritem()">Adicionar item</button>
+    <button onclick="removerItem()">Remover item</button>
+
+    <script>
+        function adicionaritem() {
+            //criar um novo elemento li 
+            let novoItem = document.createElement("li")
+            //definir o texto de novo item
+            novoItem.textContent = "Novo item"
+            //adicionar o novo item a lista
+            let lista = document.getElementById("minhalista")
+            lista.appendChild(novoItem)
+        }
+
+        function removerItem() {
+            //identificar o item no HTML
+            let lista = document.getElementById("minhalista")
+            if (lista.children.length > 0) {
+                lista.removeChild(lista.lastElementChild);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
